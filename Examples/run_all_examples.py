@@ -5,6 +5,12 @@ import sys
 # Set license path
 # os.environ["GROUPDOCS_LIC_PATH"] = "/path/to/your/license/file.lic"
 
+# Console output colors
+YELLOW = "\033[93m"
+GREEN = "\033[92m"
+RED = "\033[91m"
+RESET = "\033[0m"
+
 def print_intro():
     intro_text = """
 =================================================================
@@ -95,7 +101,7 @@ for example in examples:
     example_path = os.path.join(current_dir, example)
     example_dir = os.path.dirname(example_path)
 
-    print(f"Running {example}...")
+    print(f"{YELLOW}Running {example}...{RESET}")
     try:
         # Execute the example script in the current environment
         subprocess.run(
@@ -104,7 +110,7 @@ for example in examples:
             check=True, 
             env=env
         )
-        print(f"Completed {example}\n")
+        print(f"{GREEN}Completed {example}{RESET}\n")
     except subprocess.CalledProcessError as e:
-        print(f"Error running {example}: {e}\n")
+        print(f"{RED}Error running {example}: {e}{RESET}\n")
 
