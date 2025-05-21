@@ -3,7 +3,7 @@ import subprocess
 import sys
 
 # Set license path
-# os.environ["GROUPDOCS_LIC_PATH"] = "/path/to/your/license/file.lic"
+os.environ["GROUPDOCS_LIC_PATH"] = "C://Licenses//GroupDocs.Total.lic"
 
 # Console output colors
 YELLOW = "\033[93m"
@@ -65,8 +65,9 @@ examples = [
     "developer-guide/converting-documents/get-possible-conversions/get_all_possible_conversions_for_current_file.py",
 
     # Convert a Document to Another Format
-    "developer-guide/converting-documents/convert-document-to-another-format/convert_consecutive_document_pages.py",
     "developer-guide/converting-documents/convert-document-to-another-format/convert_document_to_another_format.py",
+    "developer-guide/converting-documents/convert-document-to-another-format/specify_output_format.py",
+    "developer-guide/converting-documents/convert-document-to-another-format/convert_consecutive_document_pages.py",
     "developer-guide/converting-documents/convert-document-to-another-format/convert_specific_document_pages.py",
  
     # Convert a Document to Multiple Page Files
