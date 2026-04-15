@@ -2,7 +2,7 @@ from groupdocs.conversion import Converter
 
 def get_pdf_document_info():
     # Load the document and retrieve information
-    with Converter("./sample-with-toc.pdf") as converter:
+    with Converter("sample-with-toc.pdf") as converter:
         doc_info = converter.get_document_info()
 
         # Print PDF document info

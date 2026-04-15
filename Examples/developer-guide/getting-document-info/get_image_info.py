@@ -1,6 +1,6 @@
 from groupdocs.conversion import Converter
 
-def get_image_document_info():
+def get_image_info():
     # Load the document and retrieve information
     with Converter("./infographic-elements.tiff") as converter:
         doc_info = converter.get_document_info()
@@ -14,4 +14,4 @@ def get_image_document_info():
         print("Size, bytes:", doc_info.size)
 
 if __name__ == "__main__":
-    get_image_document_info()
+    get_image_info()

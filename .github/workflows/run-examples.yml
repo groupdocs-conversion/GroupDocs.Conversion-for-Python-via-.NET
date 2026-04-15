@@ -1,0 +1,32 @@
+name: Run Examples
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+  workflow_dispatch:
+
+jobs:
+  run-examples:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ['3.13']
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: Install ICU (required by .NET runtime)
+        run: sudo apt-get update -qq && sudo apt-get install -y --no-install-recommends libicu-dev
+
+      - name: Install package
+        run: pip install -r Examples/requirements.txt
+
+      - name: Run all examples
+        run: python Examples/run_all_examples.py

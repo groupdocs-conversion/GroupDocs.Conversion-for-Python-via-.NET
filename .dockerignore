@@ -1,0 +1,6 @@
+.git
+*.whl
+*.lic
+Dockerfile.test
+__pycache__
+*.py[cod]

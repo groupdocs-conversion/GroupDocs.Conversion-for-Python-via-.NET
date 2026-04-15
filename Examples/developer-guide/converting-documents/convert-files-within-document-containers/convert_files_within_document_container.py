@@ -2,13 +2,13 @@ from groupdocs.conversion import Converter
 from groupdocs.conversion.options.convert import PdfConvertOptions
 
 def convert_files_within_document_container():
-    # Instantiate Converter with the input document 
+    # Instantiate Converter with the input document container
     with Converter("./compressed.zip") as converter:
-        # Instantiate convert options 
+        # Instantiate convert options
         pdf_convert_options = PdfConvertOptions()
 
-        # Extract, convert and save output files in PDF format
-        converter.convert_multiple("./converted-files", pdf_convert_options)    
+        # Extract the archive, convert the contained files, and save a consolidated PDF
+        converter.convert("./converted.pdf", pdf_convert_options)
 
 if __name__ == "__main__":
     convert_files_within_document_container()
