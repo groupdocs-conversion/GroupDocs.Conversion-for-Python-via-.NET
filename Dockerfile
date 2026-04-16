@@ -3,9 +3,10 @@ FROM python:3.13-slim
 # System dependencies required by the .NET runtime:
 # - libicu-dev: ICU for .NET globalization
 # - libgdiplus: GDI+ for System.Drawing (image conversions)
-# - fonts-liberation: fonts for watermark/text rendering
+# - ttf-mscorefonts-installer: Microsoft core fonts (Arial etc.) for watermarks
 RUN apt-get update -qq \
-    && apt-get install -y --no-install-recommends libicu-dev libgdiplus fonts-liberation \
+    && echo "ttf-mscorefonts-installer msttcorefonts/accepted-mscorefonts-eula select true" | debconf-set-selections \
+    && apt-get install -y --no-install-recommends libicu-dev libgdiplus ttf-mscorefonts-installer \
     && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /app

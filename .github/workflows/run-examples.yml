@@ -25,7 +25,8 @@ jobs:
       - name: Install system dependencies
         run: |
           sudo apt-get update -qq
-          sudo apt-get install -y --no-install-recommends libicu-dev libgdiplus fonts-liberation
+          echo "ttf-mscorefonts-installer msttcorefonts/accepted-mscorefonts-eula select true" | sudo debconf-set-selections
+          sudo apt-get install -y --no-install-recommends libicu-dev libgdiplus ttf-mscorefonts-installer
 
       - name: Install package
         run: pip install -r Examples/requirements.txt
