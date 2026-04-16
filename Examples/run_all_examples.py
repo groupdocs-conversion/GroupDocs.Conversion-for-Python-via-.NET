@@ -123,3 +123,5 @@ for example in examples:
         failed += 1
 
 print(f"\n{GREEN}Passed: {passed}{RESET}  {RED}Failed: {failed}{RESET}  Total: {passed + failed}")
+
+sys.exit(1 if failed else 0)

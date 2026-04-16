@@ -1,8 +1,11 @@
 FROM python:3.13-slim
 
-# ICU is the only system dependency required by the .NET runtime
+# System dependencies required by the .NET runtime:
+# - libicu-dev: ICU for .NET globalization
+# - libgdiplus: GDI+ for System.Drawing (image conversions)
+# - fonts-liberation: fonts for watermark/text rendering
 RUN apt-get update -qq \
-    && apt-get install -y --no-install-recommends libicu-dev \
+    && apt-get install -y --no-install-recommends libicu-dev libgdiplus fonts-liberation \
     && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /app
