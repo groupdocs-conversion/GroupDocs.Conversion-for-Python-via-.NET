@@ -16,7 +16,7 @@ import sys
 def run_cli(*args):
     """Invoke the CLI via ``python -m groupdocs.conversion`` and echo it."""
     cmd = [sys.executable, "-m", "groupdocs.conversion", *args]
-    print(f"$ groupdocs-conversion {' '.join(args)}")
+    print("$ groupdocs-conversion " + " ".join(args))
     result = subprocess.run(cmd, capture_output=True, text=True)
     if result.stdout:
         print(result.stdout.rstrip())
