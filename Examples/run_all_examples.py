@@ -71,6 +71,7 @@ examples = [
     "getting-started/quick-start-guide/convert_docx_to_pdf.py",
     "getting-started/quick-start-guide/convert_pdf_pages_to_png.py",
     "getting-started/quick-start-guide/convert_files_in_archive.py",
+    "getting-started/command-line-interface/use_command_line_interface.py",
     "licensing/set_license_from_file.py",
     "licensing/set_license_from_stream.py",
     "licensing/set_metered_license.py",

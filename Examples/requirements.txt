@@ -1,2 +1,2 @@
-groupdocs-conversion-net==26.3
+groupdocs-conversion-net==26.5.0
 requests>=2.32.5
