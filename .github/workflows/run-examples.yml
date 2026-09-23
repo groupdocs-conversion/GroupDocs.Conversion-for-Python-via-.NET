@@ -26,7 +26,7 @@ jobs:
         run: |
           sudo apt-get update -qq
           echo "ttf-mscorefonts-installer msttcorefonts/accepted-mscorefonts-eula select true" | sudo debconf-set-selections
-          sudo apt-get install -y --no-install-recommends libicu-dev libgdiplus ttf-mscorefonts-installer
+          sudo apt-get install -y --no-install-recommends libicu-dev fontconfig ttf-mscorefonts-installer
 
       - name: Install package
         run: pip install -r Examples/requirements.txt

@@ -324,8 +324,8 @@ Use `FileType.from_extension("json")` when you don't know which subclass owns a 
 | Platform | Requirements |
 |---|---|
 | Windows | None |
-| Linux | `apt install libgdiplus libfontconfig1 ttf-mscorefonts-installer` |
-| macOS | `brew install mono-libgdiplus` |
+| Linux | `apt install libicu-dev fontconfig ttf-mscorefonts-installer` |
+| macOS | None |
 
 ## Troubleshooting
 
@@ -349,10 +349,6 @@ for pair in Converter.get_all_possible_conversions():
 with Converter("input.vss") as c:
     print(c.get_possible_conversions().all)
 ```
-
-**`System.Drawing.Common is not supported`** -- install libgdiplus: `sudo apt install libgdiplus` (Linux) / `brew install mono-libgdiplus` (macOS)
-
-**`Gdip` type initializer exception** -- outdated libgdiplus: `brew reinstall mono-libgdiplus` (macOS)
 
 **Garbled text / missing fonts** -- install fonts: `sudo apt install ttf-mscorefonts-installer fontconfig && sudo fc-cache -f`
 
